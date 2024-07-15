@@ -4,6 +4,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include "Callbacks.hpp"
+
 int main(void)
 {
     GLFWwindow* window;
@@ -28,6 +30,8 @@ int main(void)
         glfwTerminate();
         return -1;
     }
+
+    glfwSetWindowSizeCallback(window, windowFramebufferResizeCallback);
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
