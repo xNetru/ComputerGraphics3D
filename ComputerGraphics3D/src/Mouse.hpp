@@ -3,17 +3,21 @@
 
 #include <glm/glm.hpp>
 
+#include "Const.hpp"
+
 class Mouse
 {
 private:
-	glm::dvec2 m_Position;
+	glm::vec2 m_Position;
+	bool m_FirstMovement = true;
+	
 	static Mouse s_Mouse;
 
 public:
-	Mouse& get();
+	static Mouse& Get();
 	
-	const glm::dvec2& getPosition() const;
-	void setPosition(const glm::dvec2& position);
+	glm::vec2 Move(float x, float y);
+
 
 private:
 	Mouse();

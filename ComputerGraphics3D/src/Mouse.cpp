@@ -1,24 +1,31 @@
 #include "Mouse.hpp"
 
-Mouse Mouse::s_Mouse;
+Mouse Mouse::s_Mouse = Mouse();
 
-Mouse& Mouse::get()
+Mouse& Mouse::Get()
 {
-    return s_Mouse;
+	return s_Mouse;
 }
 
-const glm::dvec2& Mouse::getPosition() const
+glm::vec2 Mouse::Move(float x, float y)
 {
-    return m_Position;
-}
+	if (m_FirstMovement)
+	{
+		m_FirstMovement = false;
+		m_Position.x = x;
+		m_Position.y = y;
+		return { 0.0f, 0.0f };
+	}
 
-void Mouse::setPosition(const glm::dvec2& position)
-{
-    m_Position = position;
+	float xoffset = x - m_Position.x;
+	float yoffset = m_Position.y - y;
+
+	m_Position.x = x;
+	m_Position.y = y;
+	return { xoffset, yoffset };
 }
 
 Mouse::Mouse()
-    : m_Position{ 0.0, 0.0 }
 {
 }
 

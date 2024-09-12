@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,14 +129,46 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Callbacks.cpp" />
-    <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="src\BezierGPU.cpp" />
+    <ClCompile Include="src\Common.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Model.cpp" />
+    <ClCompile Include="src\Mouse.cpp" />
+    <ClCompile Include="src\Object.cpp" />
+    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\StbUtils.cpp" />
+    <ClCompile Include="src\Texture2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Callbacks.hpp" />
-    <ClInclude Include="Camera.hpp" />
-    <ClInclude Include="Mouse.hpp" />
+    <ClInclude Include="src\BezierGPU.hpp" />
+    <ClInclude Include="src\Camera.hpp" />
+    <ClInclude Include="src\Common.h" />
+    <ClInclude Include="src\Const.hpp" />
+    <ClInclude Include="src\Mesh.h" />
+    <ClInclude Include="src\Model.h" />
+    <ClInclude Include="src\Mouse.hpp" />
+    <ClInclude Include="src\Object.h" />
+    <ClInclude Include="src\Scene.h" />
+    <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\Skybox.h" />
+    <ClInclude Include="src\StbUtils.h" />
+    <ClInclude Include="src\Texture2D.h" />
+    <ClInclude Include="src\vendor\stb_image.h" />
+    <ClInclude Include="src\Weather.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\bezier.fragment.shader" />
+    <None Include="res\shaders\bezier.vertex.shader" />
+    <None Include="res\shaders\common.fragment.shader" />
+    <None Include="res\shaders\common.vertex.shader" />
+    <None Include="res\shaders\skybox.fragment.shader" />
+    <None Include="res\shaders\skybox.vertex.shader" />
+    <None Include="res\shaders\sphere.fragment.shader" />
+    <None Include="res\shaders\sphere.vertex.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\textures\awesomeface.png" />
+    <Image Include="res\textures\container.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
