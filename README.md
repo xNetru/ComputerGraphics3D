@@ -7,4 +7,5 @@ To build it there is neccessary vcpkg installed with
 - ```glad```
 - ```glm```
 - ```assimp```
+  
 packages installed.
